@@ -308,16 +308,9 @@ const buildBlocks = async (assetsDir) => {
 		return arg !== '--watch'
 	});
 
-	console.log(webpackArgs);
-
 	const childProcess = spawn(resolveBin('webpack'), webpackArgs, {
 		stdio: 'inherit',
 	});
-
-
-	console.log( 'CHILD' );
-	console.log( childProcess.status );
-
 
 	process.stdout.on('data', function (data) {
 		console.log(data);
@@ -326,7 +319,7 @@ const buildBlocks = async (assetsDir) => {
 
 // Setup Browsersync if watch is enabled.
 if (true === options.watch) {
-	const browserSync = require('browser-sync').create();
+	//const browserSync = require('browser-sync').create();
 	const jsWatchDirs = [];
 	const watch = chokidar.watch;
 
