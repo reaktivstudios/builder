@@ -1,5 +1,5 @@
 {
-  "name": "builder",
+  "name": "@reaktivstudios/builder",
   "version": "1.0.0",
   "description": "A build script designed for SASS, JavaScript, and WordPress blocks, all in one place.",
   "main": "build.js",
