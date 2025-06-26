@@ -359,4 +359,11 @@ if (true === options.watch) {
 runSass();
 build().then(() => {
 	console.log('Build complete!');
+
+	if ( options.watch !== true ) {
+		console.log('Exiting process...');
+		setTimeout(() => {
+			process.exit(0);
+		}, 5000);
+	}
 });
