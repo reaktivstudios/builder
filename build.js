@@ -182,7 +182,7 @@ const buildEsbuild = async ( assetsDir ) => {
 					'@wordpress/element': 'wp.element',
 					'@wordpress/plugins': 'wp.plugins',
 					'@wordpress/editor': 'wp.editor',
-					'@wordpress/block-editor': 'wp.block-editor',
+					'@wordpress/block-editor': 'wp.blockEditor',
 					'@wordpress/blocks': 'wp.blocks',
 					'@wordpress/hooks': 'wp.hooks',
 					'@wordpress/utils': 'wp.utils',
@@ -281,7 +281,9 @@ const buildBlocks = async (assetsDir) => {
 	// Set Defaults
 	const { getWebpackArgs } = require('./node_modules/@wordpress/scripts/utils/index');
 
-	process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+	if ( true !== options.watch ) {
+		process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+	}
 	process.env.WP_COPY_PHP_FILES_TO_DIST = true;
 	process.env.WP_EXPERIMENTAL_MODULES = true;
 
